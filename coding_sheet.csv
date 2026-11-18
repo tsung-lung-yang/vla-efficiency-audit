@@ -1,0 +1,273 @@
+id,paper,item,code,evidence,page
+P041,Reflex,1,met,Hardware table lists an NVIDIA RTX 4090 (24 GB); RTX 3090 in App. D.5,p14
+P041,Reflex,2,met,50 Hz streaming; Pi0.5 latency 135.2 ms vs 52.4 ms (Tab. 8),"p1, p15"
+P041,Reflex,3,met,kernel fusion targets single-stream inference at batch size B = 1,p6
+P041,Reflex,4,met,"95th-percentile latency over 1,000 action-chunk generations",p14
+P041,Reflex,5,met,Tab. 8 gives latency and success rate per configuration,p15
+P041,Reflex,6,met,"Standard, Naive Cache and Async-Naive baselines timed on the same GPU","p6, p15"
+P041,Reflex,7a,met,Tab. 2: real-robot latency 101-110 ms on AgileX PiPer,p8
+P041,Reflex,7b,not met,only RTX 4090 / RTX 3090 timings,
+P023,AVA-VLA,1,met,latency measured on an NVIDIA A100,p7
+P023,AVA-VLA,2,met,145 ms vs 98 ms (pi0-FAST) and 892 ms (explicit CoT),p7
+P023,AVA-VLA,3,met,latency measured with batch size 1,p7
+P023,AVA-VLA,4,met,Tab. 2 reports mean and P90 latency,p8
+P023,AVA-VLA,5,met,Tab. 2 pairs LIBERO success with latency; matched-latency comparison (Tab. 10),"p8, p13"
+P023,AVA-VLA,6,met,"Tab. 2 times OpenVLA, pi0-FAST and explicit-CoT baselines on the same A100",p8
+P023,AVA-VLA,7a,not met,LIBERO/CALVIN simulation only; no real-robot timing,
+P023,AVA-VLA,7b,not met,A100 only,
+P074,EcoVLA,1,met,"RTX 3090 unless stated; Jetson AGX Orin, 50 W mode, full spec in Tab. 10","p7, p14"
+P074,EcoVLA,2,met,pi0.5 latency 81.94 ms; Orin 702.26 ms,"p8, p9"
+P074,EcoVLA,3,met,states streaming control runs at batch size = 1,p5
+P074,EcoVLA,4,not met,single latency values; no spread or tail statistic,
+P074,EcoVLA,5,met,tables pair success rate with latency and speedup,p7
+P074,EcoVLA,6,met,"baselines (FastV, VLA-Cache) timed in the same setup; Tab. 3",p7
+P074,EcoVLA,7a,met,Tab. 4: real-robot latency 86.08 to 68.40 ms on pi0.5,p7
+P074,EcoVLA,7b,met,"Tab. 9: Jetson AGX Orin, 702 ms to 491 ms at 40% sparsity",p9
+P070,GridS,1,met,efficiency evaluated on a single RTX Pro 6000; real robot on RTX 3090,"p5, p10"
+P070,GridS,2,met,per-chunk time in seconds (Tab. 2: 2.44 s vs 2.38 s),p6
+P070,GridS,3,met,"timing across batch sizes 1 to 128; ~1.2x at one batch, 3.2x at 128",p12
+P070,GridS,4,not met,success averaged over 3 seeds; no latency spread,
+P070,GridS,5,met,Tab. 1-2 pair accuracy with FLOPs and time,"p5, p6"
+P070,GridS,6,met,dense pi0 / pi0.5 and pruning baselines timed on the same GPU,p5
+P070,GridS,7a,met,SO100 arm with RTX 3090 workstation; 1.23x inference speedup,"p2, p10"
+P070,GridS,7b,not met,workstation GPUs only,
+P069,ADP,1,met,NVIDIA RTX 4090 for simulation and real robot,"p7, p8"
+P069,ADP,2,met,real-robot latency 76.9 vs 51.8 (unit not stated; Tab. 2),p8
+P069,ADP,3,not met,no batch size for timing,
+P069,ADP,4,not met,single latency values,
+P069,ADP,5,met,"Tab. 1-2 pair success rate with FLOPs, speedup, latency","p7, p8"
+P069,ADP,6,met,FastV reproduced on OpenVLA-OFT in the same environment,p7
+P069,ADP,7a,met,Tab. 2: latency on Kinova Jaco2 real-robot tasks,p8
+P069,ADP,7b,not met,RTX 4090 workstation,
+P102,BAC,1,met,all experiments on a single RTX 4090D,p8
+P102,BAC,2,met,71% success at 39.2 Hz; peak 45.1 Hz,p8
+P102,BAC,3,not met,no batch size for timing,
+P102,BAC,4,not met,single frequency values,
+P102,BAC,5,met,success rate reported with inference frequency per setting,p8
+P102,BAC,6,met,caching baselines compared on the same GPU,p8
+P102,BAC,7a,met,real-world Franka Research 3 task with inference frequency,"p7, p8"
+P102,BAC,7b,not met,RTX 4090D,
+P052,Discrete Diffusion VLA,1,met,single NVIDIA H800; real robot on a single RTX 4090,p8
+P052,Discrete Diffusion VLA,2,met,68.8 ms per chunk (14.53 Hz) vs 136.2 ms AR,p8
+P052,Discrete Diffusion VLA,3,not met,training batch size only,
+P052,Discrete Diffusion VLA,4,not met,single latency values,
+P052,Discrete Diffusion VLA,5,met,real-robot success reported at 9.69 Hz,p8
+P052,Discrete Diffusion VLA,6,met,AR and continuous-diffusion baselines timed on the same H800 (Tab. 6),p8
+P052,Discrete Diffusion VLA,7a,met,AgileX Cobot Magic control at 9.69 Hz,p8
+P052,Discrete Diffusion VLA,7b,not met,H800 / RTX 4090,
+P064,SpecPrune-VLA,1,met,evaluations on a single RTX 4090 (24 GB); A800 for FlashAttention check,"p18, p14"
+P064,SpecPrune-VLA,2,met,latency 109 ms to 72.3 ms,p8
+P064,SpecPrune-VLA,3,not met,training batch size only,
+P064,SpecPrune-VLA,4,not met,end-to-end latency given as range 72-78 ms; +- only for overhead modules (Tab. 9),p17
+P064,SpecPrune-VLA,5,met,Tab. 1 pairs success rate with latency and speedup,p8
+P064,SpecPrune-VLA,6,met,"OpenVLA-OFT timed by authors, also with FlashAttention (98.5 vs 109.0 ms)",p14
+P064,SpecPrune-VLA,7a,met,Tab. 2: real-robot latency 187.7 to 110.2 ms,p9
+P064,SpecPrune-VLA,7b,not met,desktop/datacenter GPUs,
+P056,VLAs across XPUs,1,met,"platforms named: Intel CPU, Ascend 310B/310P, AGX Orin, Jetson Thor, RTX 4090",p3
+P056,VLAs across XPUs,2,met,e.g. 1853 ms to 530 ms with ATC compilation; frequencies in Hz,"p8, p7"
+P056,VLAs across XPUs,3,not met,no batch size for timing,
+P056,VLAs across XPUs,4,not met,"+- reported for cosine similarity, not latency",p8
+P056,VLAs across XPUs,5,met,tables pair speedup and Hz with LIBERO success,p7
+P056,VLAs across XPUs,6,met,baselines timed on each platform,p7
+P056,VLAs across XPUs,7a,met,"Tab. 5: Franka deployment, latency and success",p7
+P056,VLAs across XPUs,7b,met,edge NPUs and Jetson modules; energy by physical power meter,p3
+P013,DriveVLA-W0,1,met,inference latency measured on an H200,p10
+P013,DriveVLA-W0,2,met,117.8 ms to 74.3 ms,p10
+P013,DriveVLA-W0,3,not met,training batch sizes only,
+P013,DriveVLA-W0,4,not met,single latency values,
+P013,DriveVLA-W0,5,met,latency reported with PDMS for each variant,p10
+P013,DriveVLA-W0,6,met,baseline variant timed on the same H200,p10
+P013,DriveVLA-W0,7a,not met,driving benchmarks only,
+P013,DriveVLA-W0,7b,not met,H200,
+P086,FASTer,1,met,inference time measured in PyTorch on an RTX 5090 (Tab. 2),p10
+P086,FASTer,2,met,"total inference 112 ms (single arm), 237 ms (WBC)",p10
+P086,FASTer,3,not met,training batch sizes only,
+P086,FASTer,4,not met,single values,
+P086,FASTer,5,met,efficiency reported alongside benchmark success,p10
+P086,FASTer,6,met,pi0 and FAST timed on the same RTX 5090,p10
+P086,FASTer,7a,not met,timing not on a robot,
+P086,FASTer,7b,not met,RTX 5090,
+P007,HiMe,1,met,local planner models served on 1x / 2x H100 (80 GB),p15
+P007,HiMe,2,met,planner latency in seconds (e.g. P50 6.10 s),p18
+P007,HiMe,3,not met,no batch size for timing,
+P007,HiMe,4,met,"Tab. 11: P50, P90 and P99 planner latency",p18
+P007,HiMe,5,not met,latency table not paired with task success,
+P007,HiMe,6,not met,no baseline timing,
+P007,HiMe,7a,met,WidowX-250 real-robot system; executor at 2 Hz; GPT-4o API planner adds network time,"p6, p18"
+P007,HiMe,7b,not met,H100 servers / API,
+P079,Hybrid Training,1,met,inference on A100 GPUs,p7
+P079,Hybrid Training,2,met,standard VLAs and HyT output actions at ~3 Hz,p7
+P079,Hybrid Training,3,not met,four models act in parallel; batch size not stated,p7
+P079,Hybrid Training,4,not met,+- given for success only,p9
+P079,Hybrid Training,5,met,success rate plotted against inference frequency (Fig. 1),p1
+P079,Hybrid Training,6,met,ECoT 3x slower and HiRobot 4x slower in the same setup,p7
+P079,Hybrid Training,7a,not met,"real xArm experiments report success, not timing",
+P079,Hybrid Training,7b,not met,A100,
+P035,QVLA,1,met,all experiments on NVIDIA RTX 4090 GPUs,p7
+P035,QVLA,2,not met,speedup ratios and memory (GB) only; no time,"p7, p10"
+P035,QVLA,3,not met,no batch size for timing,
+P035,QVLA,4,not met,single values,
+P035,QVLA,5,met,Tab. 1-2 pair success with memory and speedup,p7
+P035,QVLA,6,met,"SmoothQuant, OmniQuant, AWQ run on the same GPUs",p7
+P035,QVLA,7a,met,Tab. 5: real-robot (IMETA-Y1) speedup 1.28x with success,p10
+P035,QVLA,7b,not met,RTX 4090; Jetson mentioned only as motivation,p1
+P113,RACE,1,not met,no device named for timing,
+P113,RACE,2,met,"execution rates of 20, 40 and 80 Hz; speed relative to demonstrations",p7
+P113,RACE,3,not met,no batch size,
+P113,RACE,4,not met,no spread of timing,
+P113,RACE,5,met,success rate plotted against execution speed,p7
+P113,RACE,6,met,fast-forward baselines run at the same rates,p7
+P113,RACE,7a,met,real-world tasks up to 4x original policy speed,p2
+P113,RACE,7b,not met,no embedded timing,
+P063,Reasoning-VLA,1,met,inference on an NVIDIA H200 with vLLM,p15
+P063,Reasoning-VLA,2,met,0.089 s per inference for 10 trajectories,p15
+P063,Reasoning-VLA,3,not met,training batch size only,
+P063,Reasoning-VLA,4,not met,"variance reported for L2 error, not latency",p8
+P063,Reasoning-VLA,5,met,speed table alongside planning accuracy,p15
+P063,Reasoning-VLA,6,met,Qwen2.5-VL-7B timed on the same H200,p15
+P063,Reasoning-VLA,7a,not met,driving benchmarks only,
+P063,Reasoning-VLA,7b,not met,H200,
+P087,RoboFlow4D,1,met,single NVIDIA RTX 6000 for all experiments,"p7, p13"
+P087,RoboFlow4D,2,met,0.68 s per flow plan; 0.20 s per policy pass,p13
+P087,RoboFlow4D,3,met,wall-clock latency measured with batch size 1,p13
+P087,RoboFlow4D,4,not met,single values,
+P087,RoboFlow4D,5,not met,latency reported separately from success tables,
+P087,RoboFlow4D,6,not met,modular-pipeline planning times taken from other papers,p13
+P087,RoboFlow4D,7a,met,latency measured on the real-robot deployment hardware,p13
+P087,RoboFlow4D,7b,not met,RTX 6000 workstation,
+P088,RoboGhost,1,not met,device for inference-time table not named,p9
+P088,RoboGhost,2,met,Tab. 3 average inference time in seconds,p9
+P088,RoboGhost,3,not met,no batch size,
+P088,RoboGhost,4,not met,averages only,
+P088,RoboGhost,5,met,Tab. 3 pairs inference time with tracking performance,p9
+P088,RoboGhost,6,met,retargeting baselines timed in Tab. 3,p9
+P088,RoboGhost,7a,met,"Unitree G1: 50 Hz commands, 18-30 ms transmission latency",p20
+P088,RoboGhost,7b,not met,"G1 carries a Jetson Orin NX, but no inference is timed on it",p20
+P081,SCALE,1,met,evaluation time on a single NVIDIA A6000,p15
+P081,SCALE,2,met,total evaluation time in hours; per-step latency (Fig. 6),p15
+P081,SCALE,3,not met,no batch size for timing,
+P081,SCALE,4,not met,single values,
+P081,SCALE,5,met,evaluation time reported with LIBERO-Long success,p15
+P081,SCALE,6,met,OpenVLA and oracle variants timed on the same A6000,p15
+P081,SCALE,7a,not met,real-world results report success only,
+P081,SCALE,7b,not met,A6000,
+P097,Sentinel-VLA,1,met,computation time on an RTX 4090 (Tab. 2),p7
+P097,Sentinel-VLA,2,met,13 ms per action,p7
+P097,Sentinel-VLA,3,not met,training batch size only,
+P097,Sentinel-VLA,4,not met,averages only,
+P097,Sentinel-VLA,5,not met,timing table separate from success results,
+P097,Sentinel-VLA,6,met,"OpenVLA, pi0, ECoT, AHA, OneTwoVLA timed on the same RTX 4090",p7
+P097,Sentinel-VLA,7a,met,real-world average computation time per action,p7
+P097,Sentinel-VLA,7b,not met,RTX 4090,
+P059,VLA-ATTC,1,met,RTX 4090,p3
+P059,VLA-ATTC,2,met,20.8 Hz control frequency (baseline 23.3 Hz),p8
+P059,VLA-ATTC,3,not met,no batch size,
+P059,VLA-ATTC,4,not met,averages only,
+P059,VLA-ATTC,5,met,Tab. 5 pairs control frequency with success,p8
+P059,VLA-ATTC,6,unclear,baseline frequency given without saying how it was obtained,p8
+P059,VLA-ATTC,7a,met,real-world control frequency 20.8 Hz,"p2, p8"
+P059,VLA-ATTC,7b,not met,RTX 4090,
+P036,TIC-VLA,1,met,"Jetson Orin NX (25 W), RTX 4060 Laptop GPU (50 W), RTX A6000","p7, p8"
+P036,TIC-VLA,2,met,runtime in ms per platform,p8
+P036,TIC-VLA,3,not met,training batch sizes only,
+P036,TIC-VLA,4,not met,single values,
+P036,TIC-VLA,5,met,success rate and runtime in one table,p8
+P036,TIC-VLA,6,not met,baselines that do not fit edge devices timed on an A6000,p8
+P036,TIC-VLA,7a,met,deployed on a quadruped with onboard compute,p7
+P036,TIC-VLA,7b,met,Jetson Orin NX and RTX 4060 Laptop GPU timings,p8
+P037,AutoMoT,1,met,own timings on RTX 5090,p15
+P037,AutoMoT,2,met,117 ms (sync) and 37 ms (async),p15
+P037,AutoMoT,3,not met,no batch size,
+P037,AutoMoT,4,not met,single values,
+P037,AutoMoT,5,met,latency table alongside driving score,p15
+P037,AutoMoT,6,not met,AutoVLA latencies cited from the original paper; GPU listed as Unknown,p15
+P037,AutoMoT,7a,not met,simulation / benchmark only,
+P037,AutoMoT,7b,not met,RTX 5090,
+P014,LaRA-VLA,1,met,inference time on an NVIDIA A100 (Fig. 8),p9
+P014,LaRA-VLA,2,met,135 ms for LaRA-VLA-4B,p9
+P014,LaRA-VLA,3,not met,no batch size,
+P014,LaRA-VLA,4,not met,single values,
+P014,LaRA-VLA,5,not met,latency figure separate from success tables,
+P014,LaRA-VLA,6,met,explicit-CoT VLAs timed on the same A100,p9
+P014,LaRA-VLA,7a,not met,real-robot results report success only,
+P014,LaRA-VLA,7b,not met,A100,
+P002,LaST0,1,met,inference speed evaluated on an NVIDIA 4090,p7
+P002,LaST0,2,met,15.4 Hz vs CoT-VLA 1.1 Hz and pi0.5 13.8 Hz,p6
+P002,LaST0,3,not met,no batch size,
+P002,LaST0,4,not met,+- only on success rates,p7
+P002,LaST0,5,met,table pairs success with Hz per method,p7
+P002,LaST0,6,unclear,baseline Hz values given without saying whether measured,p7
+P002,LaST0,7a,not met,real-world results report success only,
+P002,LaST0,7b,not met,RTX 4090,
+P012,RA-VLA,1,met,benchmarks on an NVIDIA A100,p12
+P012,RA-VLA,2,met,retrieval 0.18 ms; latency vs. number of segments (Fig. 5),"p12, p8"
+P012,RA-VLA,3,not met,no batch size,
+P012,RA-VLA,4,not met,single values,
+P012,RA-VLA,5,not met,latency analysis separate from success,
+P012,RA-VLA,6,met,RICL and ICIL baselines timed in Fig. 5,"p7, p8"
+P012,RA-VLA,7a,not met,served from an A100 node; no robot-side timing,
+P012,RA-VLA,7b,not met,A100,
+P089,SceneDiver,1,met,single NVIDIA RTX 4090,p15
+P089,SceneDiver,2,met,3.01 ms overhead of 114.45 ms per action generation,p15
+P089,SceneDiver,3,not met,no batch size,
+P089,SceneDiver,4,met,"mean, median, P95, P99 over 10,000 action generations",p15
+P089,SceneDiver,5,not met,overhead table separate from success,
+P089,SceneDiver,6,not met,no baseline timing,
+P089,SceneDiver,7a,not met,no robot timing,
+P089,SceneDiver,7b,not met,RTX 4090,
+P092,Unified Diffusion VLA,1,not met,no device stated for decoding speed,
+P092,Unified Diffusion VLA,2,met,219.3 vs 50.2 tokens/s,p9
+P092,Unified Diffusion VLA,3,not met,training batch size only,
+P092,Unified Diffusion VLA,4,not met,single values,
+P092,Unified Diffusion VLA,5,met,speed table pairs tokens/s with CALVIN average length,p9
+P092,Unified Diffusion VLA,6,met,"AR, Jacobi and ID decoding timed in the same table",p9
+P092,Unified Diffusion VLA,7a,not met,real-world results report success only,
+P092,Unified Diffusion VLA,7b,not met,no embedded timing,
+P067,Mixture of Horizons,1,not met,no device stated for inference timing,
+P067,Mixture of Horizons,2,not met,"""throughput"" is executed actions per chunk; time costs shown only relatively (Fig. 8)",p13
+P067,Mixture of Horizons,3,not met,training batch size only,
+P067,Mixture of Horizons,4,not met,no spread of timing,
+P067,Mixture of Horizons,5,met,success reported at each horizon setting,p13
+P067,Mixture of Horizons,6,met,pi0 / pi0.5 timed under each horizon (Fig. 8),p13
+P067,Mixture of Horizons,7a,not met,no robot timing,
+P067,Mixture of Horizons,7b,not met,no embedded timing,
+P065,RDT2,1,not met,no device stated for inference frequency,
+P065,RDT2,2,met,inference frequency up to 23.0 Hz (Fig. 6-7),p7
+P065,RDT2,3,not met,training batch size only,
+P065,RDT2,4,not met,single values,
+P065,RDT2,5,not met,frequency figure separate from success,
+P065,RDT2,6,unclear,baseline frequencies given without saying how obtained,p7
+P065,RDT2,7a,not met,real-robot tasks report success; no timing on the robot found (earlier version: met),p7
+P065,RDT2,7b,not met,no embedded timing,
+P078,RoboOmni (proactive),1,met,per-inference latency on a single RTX 4090,p10
+P078,RoboOmni (proactive),2,not met,relative latency only (0.49x of ASR + OpenVLA),p10
+P078,RoboOmni (proactive),3,not met,training batch size only,
+P078,RoboOmni (proactive),4,not met,no spread,
+P078,RoboOmni (proactive),5,not met,latency figure separate from success,
+P078,RoboOmni (proactive),6,met,cascaded ASR baselines timed on the same GPU,p10
+P078,RoboOmni (proactive),7a,not met,no robot timing,
+P078,RoboOmni (proactive),7b,not met,RTX 4090,
+P027,RoboOmni (unified),1,not met,no device stated for 82.6 Hz,
+P027,RoboOmni (unified),2,met,82.6 Hz; 107 ms/action without MTAP,"p2, p7"
+P027,RoboOmni (unified),3,not met,no batch size,
+P027,RoboOmni (unified),4,not met,no spread,
+P027,RoboOmni (unified),5,met,speed reported with task success per tokenizer,p7
+P027,RoboOmni (unified),6,unclear,OpenVLA comparison (27x) without saying whether measured,p2
+P027,RoboOmni (unified),7a,not met,no robot timing,
+P027,RoboOmni (unified),7b,not met,no embedded timing,
+P082,SpikeVLA,1,not met,no device stated,
+P082,SpikeVLA,2,not met,memory (GB) and energy (J) only,p6
+P082,SpikeVLA,3,not met,no batch size,
+P082,SpikeVLA,4,not met,no spread,
+P082,SpikeVLA,5,met,navigation metrics and resource metrics in one table,p7
+P082,SpikeVLA,6,met,NaVILA and other baselines given memory and energy in the same table,p7
+P082,SpikeVLA,7a,not met,no robot timing,
+P082,SpikeVLA,7b,not met,no embedded timing,
+P040,RobustVLA,1,not met,no device stated,
+P040,RobustVLA,2,met,per-episode inference time of about 11 s,p9
+P040,RobustVLA,3,not met,training batch size only,
+P040,RobustVLA,4,not met,no spread,
+P040,RobustVLA,5,not met,timing separate from success,
+P040,RobustVLA,6,unclear,50.6x vs BYOVLA without saying whether measured,p9
+P040,RobustVLA,7a,not met,no robot timing,
+P040,RobustVLA,7b,not met,no embedded timing,
